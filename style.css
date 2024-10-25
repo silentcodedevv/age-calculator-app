@@ -1,0 +1,239 @@
+/* CSS Variables */
+
+:root {
+  /* Primary Colors */
+
+  --purple: hsl(259, 100%, 65%);
+  --light-red: hsl(0, 100%, 67%);
+
+  /* Neutral Colors */
+  --white: hsl(0, 0%, 100%);
+  --off-White: hsl(0, 0%, 94%);
+  --light-Grey: hsl(0, 0%, 86%);
+  --smokey-Grey: hsl(0, 1%, 44%);
+  --ff-Black: hsl(0, 0%, 8%);
+
+  /* Font */
+  --poppins: "Poppins", sans-serif;
+
+  /* Font Weights*/
+  --font-400: 400; /* Italic */
+  --font-700: 700;
+  --font-800: 800; /* Italic */
+
+  /* Input styles */
+  --label-text-lg: 0.875rem;
+  --label-text-sm: 0.75rem;
+
+  /* Input fields */
+  --inputFields-width-lg: 160px;
+  --inputFields-height-lg: 72px;
+  --inputFields-width-sm: 87.67px;
+  --inputFields-height-sm: 54px;
+
+  /* Line section */
+  --lineSection-padding-lg: 2.969rem;
+  --lineSection-padding-sm: 2rem;
+
+  /* Button size */
+  --submitButton-lg: 96px;
+  --submitButton-sm: 64px;
+
+  /* Result text */
+  --fontHeading-lg: 4.5rem;
+  --fontHeading-sm: 2.375rem;
+}
+
+/* CSS Reset */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* Main Container Global */
+
+body {
+  justify-content: center;
+  align-items: center;
+  font-family: var(--poppins);
+  background-color: var(--light-Grey);
+}
+
+.calc-wrapper {
+  background-color: var(--white);
+  border-radius: 24px 24px 100px 24px;
+}
+
+/* Input Styling */
+
+.form-container {
+  display: flex;
+  padding: var();
+}
+
+input {
+  border: 1px solid var(--smokey-Grey);
+  font-weight: var(--font-800);
+  padding-left: 1rem;
+  border-radius: 8px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  font-weight: var(--font-700);
+  color: var(--smokey-Grey);
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  background-color: var(--light-Grey);
+}
+
+input:focus {
+  outline: 1px solid var(--purple);
+}
+
+.submit-button {
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: var(--ff-Black);
+}
+
+li {
+  display: flex;
+}
+
+span {
+  color: var(--purple);
+}
+
+/* Result Texts */
+.result-container {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  line-height: 160%;
+}
+
+@media screen and (min-width: 834px) {
+  body {
+    display: flex;
+    height: 100vh;
+  }
+
+  .calc-wrapper {
+    display: flex;
+    flex-direction: column;
+    max-width: 840px;
+    padding: var(--lineSection-padding-lg);
+  }
+
+  .form-container {
+    width: 728px;
+    padding-bottom: var(--lineSection-padding-lg);
+  }
+
+  .input-group:nth-child(2) {
+    padding: 0rem 2rem;
+  }
+
+  input {
+    padding-left: 1.5rem;
+    font-size: 2rem;
+    width: var(--inputFields-width-lg);
+    height: var(--inputFields-height-lg);
+  }
+
+  /* Line Styling */
+
+  .line-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  .submit-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    border: none;
+    background-color: var(--purple);
+    border-radius: 50%;
+    width: var(--submitButton-lg);
+    height: var(--submitButton-lg);
+  }
+
+  /* Result Texts */
+  .result-container {
+    font-size: var(--fontHeading-lg);
+  }
+}
+
+@media screen and (max-width: 834px) {
+  body {
+    height: 100%;
+  }
+  /* Main Container Mobile */
+
+  .calc-wrapper {
+    padding: 3rem 1.5rem;
+    margin: 0rem 1rem;
+    margin-top: 5.5rem;
+  }
+
+  .form-container {
+    padding-bottom: var(--lineSection-padding-sm);
+  }
+
+  .input-group:nth-child(2) {
+    padding: 0rem 1rem;
+  }
+
+  input {
+    font-size: 1.25rem;
+    width: var(--inputFields-width-sm);
+    height: var(--inputFields-height-sm);
+  }
+
+  /* Line Styling */
+
+  .line-wrapper {
+    position: relative;
+    margin: var(--lineSection-padding-sm) 0rem;
+  }
+
+  .submit-button {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    border: none;
+    background-color: var(--purple);
+    border-radius: 50%;
+    width: var(--submitButton-sm);
+    height: var(--submitButton-sm);
+  }
+
+  /* Result Texts */
+  .result-container {
+    font-size: var(--fontHeading-sm);
+  }
+}
